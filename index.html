@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Franchise List</title>
+    <style>
+      body {
+        background: radial-gradient(circle at center, #2c3e50 0%, #000000 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: "Arial", sans-serif;
+      }
+
+      .card-container {
+        border: 2px solid rgba(255, 255, 255, 0.7);
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        width: 450px;
+      }
+
+      h2 {
+        color: white;
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+      }
+
+      .franchise-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        border: 1px solid #333;
+        /* This ensures the grey background follows the border radius */
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .list-items {
+        background-color: #e0e0e0;
+        padding: 12px;
+        color: #1a1a1a;
+        font-size: 1.2rem;
+        border-bottom: 1px solid #333;
+      }
+
+      /* FIXED: Removed the space. Now it targets the last <li> correctly */
+      .list-items:last-child {
+        border-bottom: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card-container">
+      <h2 id="main-heading">Favourite Movie Franchise</h2>
+
+      <ul class="franchise-list">
+        <li class="list-items">The Matrix</li>
+        <li class="list-items">Star Wars</li>
+        <li class="list-items">Harry Potter</li>
+        <li class="list-items">Lord of the Rings</li>
+        <li class="list-items">Marvel</li>
+      </ul>
+    </div>
+
+    <!-- <script>
+      // To change "The Matrix" to "DC Universe" automatically:
+      const firstListItem = document.querySelector(".list-items");
+      
+      if (firstListItem) {
+          firstListItem.innerText = "DC Universe";
+          // The style applies automatically because the class ".list-items" 
+          // is already on the element!
+      }
+
+      console.log("Inner:", firstListItem.innerText);
+      console.log("TextContent:", firstListItem.textContent);
+    </script> -->
+
+    <script src="intro_to_JS.js"></script>
+  </body>
+</html>
