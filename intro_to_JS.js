@@ -1,61 +1,33 @@
 // DOM Manipulation
 
-//getElementById()
-// heading = document.getElementById("main-heading");
-// console.log(heading);
+// Traverse the DOM
 
-//getElementByClassName()
-// listItems = document.getElementsByClassName("list-items");
-// console.log(listItems);
+// Parents Node Traversal
+let ul = document.querySelector("ul");
+// console.log(ul.parentNode);
+// console.log(ul.parentElement);
+// console.log(ul.parentElement.parentElement);
+// console.log(ul.parentNode.parentNode);
 
-// getElementByTagName()
-// listItems = document.getElementsByTagName("li");
-// console.log(listItems);
+// const htmlElement = document.documentElement;
+// console.log(htmlElement.parentNode);
+// console.log(htmlElement.parentElement);
 
-//querySelector()
+//Child Node Traversal
+// console.log(ul.childNodes);
+// ul.childNodes[1].style.backgroundColor = "red";
+// console.log(ul.firstChild);
+// console.log(ul.lastChild);
+//
 
-// querySelectorAll()
+//
+// console.log(ul.children);
+// console.log(ul.firstElementChild);
+// console.log(ul.lastElementChild);
 
-//  styling Elements
+// Sibling Node Traversal
+console.log(ul.previousSibling);
+console.log(ul.nextSibling);
 
-// heading = document.getElementById("main-heading");
-// listItems = document.getElementsByClassName("list-items");
-// heading.style.color = "blue";
-// heading.style.fontSize = "50px";
-// for (let i = 0; i < listItems.length; i += 2) {
-//   listItems[i].style.color = "green";
-// }
-
-/* ?*/
-
-// Creating
-
-const ul = document.querySelector("ul");
-const li = document.createElement("li");
-
-// Addinng elements
-ul.append(li);
-
-// Modifying Text
-const firstListItem = document.querySelector(".list-items");
-li.innerText = "DC Universe";
-
-// console.log(firstListItem.innerText);
-// console.log(firstListItem.textContent);
-// console.log(firstListItem.innerHTML);
-
-/* */
-// Modifying Attributes and Classes
-// li.setAttribute("class", "list-items");
-// li.removeAttribute("class");
-// const title = document.querySelector("#main-heading");
-// console.log(title.getAttribute("id"));
-
-li.classList.add("list-items");
-
-// li.classList.remove("list-items");
-console.log(li.classList.contains("list-items"));
-
-// Removing Elements
-// li.remove();
-// ul.remove();
+console.log(ul.previousElementSibling);
+console.log(ul.nextElementSibling);
