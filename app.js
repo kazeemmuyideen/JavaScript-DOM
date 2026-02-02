@@ -1,15 +1,44 @@
-const revealBtn = document.querySelector(".reveal-btn");
-const hiddenContent = document.querySelector(".hidden-content");
+// DOM Manipulation
 
-revealBtn.addEventListener("click", () => {
-  // toggle() automatically adds the class if it's missing,
-  // and removes it if it's already there.
-  hiddenContent.classList.toggle("reveal-content");
+// Event Propagation
+window.addEventListener(
+  "click",
+  function () {
+    console.log("Window");
+  },
+  true,
+);
 
-  // Optional: Update button text
-  if (hiddenContent.classList.contains("reveal-content")) {
-    revealBtn.innerText = "Hide Content";
-  } else {
-    revealBtn.innerText = "Reveal More";
-  }
-});
+document.addEventListener(
+  "click",
+  function () {
+    console.log("Document");
+  },
+  true,
+);
+
+document.querySelector(".div2").addEventListener(
+  "click",
+  function () {
+    console.log("DIV 2");
+  },
+  true,
+);
+
+document.querySelector(".div1").addEventListener(
+  "click",
+  function () {
+    console.log("DIV 1");
+  },
+  true,
+);
+
+document.querySelector("button").addEventListener(
+  "click",
+  function (e) {
+    console.log((e.target.innerText = "Clicked"));
+  },
+  true,
+);
+
+// e.stopPropagation

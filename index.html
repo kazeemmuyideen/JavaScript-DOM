@@ -3,16 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Master DOM Manipulation: Part 1</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+    <title>Nested Event Propagation</title>
     <style>
-      /* style.css */
+      /* Setup the dark background and center everything */
       body {
         background: radial-gradient(circle at center, #2c3e50 0%, #000000 100%);
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 100vh;
@@ -21,66 +17,60 @@
         color: white;
       }
 
-      #main-heading {
-        font-size: 3rem;
-        margin-bottom: 40px;
-      }
-
-      .container {
+      /* Outer Box (2) */
+      .div2 {
+        border: 2px solid rgba(255, 255, 255, 0.8);
+        border-radius: 20px;
+        width: 300px;
+        height: 400px;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+        font-size: 2rem;
+        font-weight: bold;
         gap: 20px;
-        width: 80%;
       }
 
-      .boxes {
-        border: 2px solid rgba(255, 255, 255, 0.7);
-        border-radius: 20px;
-        padding: 40px;
-        min-width: 200px;
+      /* Inner Box (1) */
+      .div1 {
+        border: 2px solid rgba(255, 255, 255, 0.8);
+        border-radius: 15px;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        gap: 15px;
       }
 
-      .reveal-btn {
+      /* The Button */
+      button {
         background: transparent;
         color: white;
-        font-size: 1.5rem;
+        border: 1px solid white;
+        border-radius: 5px;
+        padding: 8px 25px;
+        font-size: 1.1rem;
         cursor: pointer;
         transition: 0.3s;
       }
 
-      .reveal-btn:hover {
+      button:hover {
         background: rgba(255, 255, 255, 0.1);
       }
-
-      /* Initially hide the content */
-      .hidden-content {
-        display: none;
-        max-width: 600px;
-        line-height: 1.6;
-      }
-
-      /* Class to be added via JavaScript */
-      .reveal-content {
-        display: block !important;
-      }
     </style>
-
-    <h1 id="main-heading">Event Listeners</h1>
-
-    <div class="container">
-      <button class="reveal-btn boxes">Reveal More</button>
-
-      <div class="hidden-content boxes">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia distinctio
-        hic facilis, repudiandae incidunt quisquam neque officiis quibusdam cum
-        quam suscipit dolorem animi aliquid harum. Unde sed illo aut officiis
-        inventore quod quibusdam, ipsam aliquam reprehenderit ad minima sit
-        ipsa? Ducimus nesciunt laudantium deleniti porro maxime molestias
-        reiciendis, hic omnis?
+  </head>
+  <body>
+    <div class="div2">
+      2
+      <div class="div1">
+        1
+        <button>Click</button>
       </div>
     </div>
-
     <script src="app.js"></script>
   </body>
 </html>
