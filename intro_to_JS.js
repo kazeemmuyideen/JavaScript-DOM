@@ -1,33 +1,38 @@
-// DOM Manipulation
+// DOM
 
-// Traverse the DOM
+// Event Listeners
 
-// Parents Node Traversal
-let ul = document.querySelector("ul");
-// console.log(ul.parentNode);
-// console.log(ul.parentElement);
-// console.log(ul.parentElement.parentElement);
-// console.log(ul.parentNode.parentNode);
+// Click Event
+// element.addEventListener('event', function)
+const btn2 = document.querySelector(".btn-2");
+// 1
+// btn2.addEventListener("click", function () {
+//   alert("Button 2 clicked!");
+// });
 
-// const htmlElement = document.documentElement;
-// console.log(htmlElement.parentNode);
-// console.log(htmlElement.parentElement);
+function showAlert() {
+  alert("Button 2 clicked!");
+}
 
-//Child Node Traversal
-// console.log(ul.childNodes);
-// ul.childNodes[1].style.backgroundColor = "red";
-// console.log(ul.firstChild);
-// console.log(ul.lastChild);
-//
+btn2.addEventListener("click", showAlert);
 
-//
-// console.log(ul.children);
-// console.log(ul.firstElementChild);
-// console.log(ul.lastElementChild);
+//Mouseover Event
+const newBackgroundColor = document.querySelector(".btn-3");
 
-// Sibling Node Traversal
-console.log(ul.previousSibling);
-console.log(ul.nextSibling);
+function changeBgColor() {
+  newBackgroundColor.style.backgroundColor = "blue";
+}
 
-console.log(ul.previousElementSibling);
-console.log(ul.nextElementSibling);
+newBackgroundColor.addEventListener("mouseover", changeBgColor);
+
+// 1. Select the reset button
+const resetBtn = document.querySelector(".reset-btn");
+
+// 2. Define the reset function
+function resetStyles() {
+  // This removes the inline 'blue' and reverts to CSS defaults
+  newBackgroundColor.style.backgroundColor = "";
+}
+
+// 3. Add the event listener
+resetBtn.addEventListener("click", resetStyles);
