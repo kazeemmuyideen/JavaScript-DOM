@@ -3,109 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Event Listeners Layout</title>
+    <title>Master DOM Manipulation: Part 1</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <style>
-      /* Dark gradient background matching the screenshot */
+      /* style.css */
       body {
         background: radial-gradient(circle at center, #2c3e50 0%, #000000 100%);
-        display: flex;
-        flex-direction: column; /* Stack heading above the cards */
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        color: white;
-      }
-
-      /* The "Event Listeners" heading box */
-      .main-title {
-        border: 2px solid rgba(255, 255, 255, 0.5);
-        border-radius: 15px;
-        padding: 10px 40px;
-        font-size: 3rem;
-        font-weight: bold;
-        margin-bottom: 60px;
-      }
-
-      /* Container for the 3 side-by-side cards */
-      .container {
-        display: flex;
-        gap: 30px; /* Space between cards */
-      }
-
-      /* Individual Card Styling */
-      .box {
-        border: 2px solid rgba(255, 255, 255, 0.5);
-        border-radius: 20px;
-        width: 220px;
-        height: 320px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transition: transform 0.2s;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: white;
       }
 
-      .box h2 {
-        font-size: 1.8rem;
+      #main-heading {
+        font-size: 3rem;
         margin-bottom: 40px;
       }
 
-      /* The "Enter" button styling */
-      .enter-btn {
-        background: transparent;
-        color: white;
-        border: 2px solid rgba(255, 255, 255, 0.8);
-        border-radius: 8px;
-        padding: 10px 25px;
-        font-size: 1.1rem;
-        cursor: pointer;
-        transition: background 0.3s;
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        width: 80%;
       }
 
-      .enter-btn:hover {
+      .boxes {
+        border: 2px solid rgba(255, 255, 255, 0.7);
+        border-radius: 20px;
+        padding: 40px;
+        min-width: 200px;
+      }
+
+      .reveal-btn {
+        background: transparent;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .reveal-btn:hover {
         background: rgba(255, 255, 255, 0.1);
       }
 
-      .reset-btn {
-        margin-top: 30px;
-        padding: 10px 20px;
-        background-color: #e74c3c; /* Red color for reset */
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-weight: bold;
+      /* Initially hide the content */
+      .hidden-content {
+        display: none;
+        max-width: 600px;
+        line-height: 1.6;
       }
 
-      .reset-btn:hover {
-        background-color: #c0392b;
+      /* Class to be added via JavaScript */
+      .reveal-content {
+        display: block !important;
       }
     </style>
-  </head>
-  <body>
-    <div class="main-title">Event Listeners</div>
+
+    <h1 id="main-heading">Event Listeners</h1>
 
     <div class="container">
-      <div class="box box-1">
-        <h2>Example 1</h2>
-        <button onclick="alert('I love JavaScript')" class="enter-btn btn-1">
-          Enter
-        </button>
-      </div>
+      <button class="reveal-btn boxes">Reveal More</button>
 
-      <div class="box box-2">
-        <h2>Example 2</h2>
-        <button class="enter-btn btn-2">Enter</button>
-      </div>
-
-      <div class="box box-3">
-        <h2>Example 3</h2>
-        <button class="enter-btn btn-3">Enter</button>
+      <div class="hidden-content boxes">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia distinctio
+        hic facilis, repudiandae incidunt quisquam neque officiis quibusdam cum
+        quam suscipit dolorem animi aliquid harum. Unde sed illo aut officiis
+        inventore quod quibusdam, ipsam aliquam reprehenderit ad minima sit
+        ipsa? Ducimus nesciunt laudantium deleniti porro maxime molestias
+        reiciendis, hic omnis?
       </div>
     </div>
-    <button class="reset-btn">Reset All Styles</button>
-    <script src="./intro_to_JS.js"></script>
+
+    <script src="app.js"></script>
   </body>
 </html>
