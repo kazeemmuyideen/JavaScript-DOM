@@ -42,3 +42,24 @@ document.querySelector("button").addEventListener(
 );
 
 // e.stopPropagation
+// change the stop attribute by using  e.stopDefault()
+//i.e change
+
+/**
+ *  <div class="div1">
+        1
+        <button>Click</button>
+      </div>
+ */
+
+// TO
+
+/**
+ *  <div class="div1">
+        1
+        <a href="" class ="button">
+      </div>
+
+       The Button  style add "display:block"
+      button {}
+ */
